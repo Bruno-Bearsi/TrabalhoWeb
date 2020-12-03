@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.15.0.final using JasperReports Library version 6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorioConsulta" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b19ddfbb-3ef8-4a72-91a8-4ef0dd01bf4e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DadosConsulta"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="preconsulta" class="java.lang.String">
+		<fieldDescription><![CDATA[preconsulta]]></fieldDescription>
+	</field>
+	<field name="posconsulta" class="java.lang.String">
+		<fieldDescription><![CDATA[posconsulta]]></fieldDescription>
+	</field>
+	<field name="diaMes" class="java.util.Calendar">
+		<fieldDescription><![CDATA[diaMes]]></fieldDescription>
+	</field>
+	<field name="hora" class="java.util.Calendar">
+		<fieldDescription><![CDATA[hora]]></fieldDescription>
+	</field>
+	<field name="paciente" class="br.edu.ifsul.modelo.Paciente">
+		<fieldDescription><![CDATA[paciente]]></fieldDescription>
+	</field>
+	<field name="medico" class="br.edu.ifsul.modelo.Medico">
+		<fieldDescription><![CDATA[medico]]></fieldDescription>
+	</field>
+	<field name="receituarios" class="java.util.List">
+		<fieldDescription><![CDATA[receituarios]]></fieldDescription>
+	</field>
+	<field name="exames" class="java.util.List">
+		<fieldDescription><![CDATA[exames]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="71" backcolor="#E6F6FA" uuid="866747e6-62ec-47bf-9511-f70c4e90c225"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="71" uuid="055bf2a8-d81a-4176-b25b-74ba2968ff19"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="33"/>
+				</textElement>
+				<text><![CDATA[Relatório de Consultas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="62" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="62" backcolor="#EDEDED" uuid="62a281b9-aa4d-45d2-89bd-fc096f7daa44"/>
+				<graphicElement>
+					<pen lineWidth="0.0" lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="30" width="270" height="20" uuid="312c4c33-15ee-42cc-8991-63117582a733">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b44495c-2bd9-4bcb-abcb-1b3f707032d4"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Preconsulta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="10" width="185" height="20" uuid="f2b1403e-3eb2-4bd5-97c9-f3200c0efafe">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c453030f-06f2-42a8-b6de-815b4b5cc59b"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="10" width="200" height="20" uuid="94726df3-49c6-4f20-b14b-45526ecdb596">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0479dd1b-39fd-45c2-b592-548cf1b74f3e"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Medico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="10" width="70" height="20" uuid="25750a4c-40d0-4067-bb39-c276ef52861d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f6779526-1f3f-482f-84c5-35dfd43bb1c7"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="10" width="50" height="20" uuid="8068bee2-dd74-4ef1-b14b-0469e9df07df">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9bb6d50b-fb86-4a4a-8c07-5d2911665a7b"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="30" width="255" height="20" uuid="222b78e3-081b-4647-b013-83854d9309ff">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="af1c08b8-6f71-4885-9b11-6f04864b3049"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Posconsulta]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="201" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="70" uuid="cb1acbfa-bea0-4458-bd63-a6614613fb26"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#E8E8E8"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="10" y="30" width="270" height="30" uuid="94235612-578c-47ba-a6d7-db14b94b3d04">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b44495c-2bd9-4bcb-abcb-1b3f707032d4"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{preconsulta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="10" width="185" height="20" uuid="4b5a3e05-c614-43a8-aebc-3b5cb8c8eed0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c453030f-06f2-42a8-b6de-815b4b5cc59b"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paciente}.getNome()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="10" width="200" height="20" uuid="58d5697e-a7c2-433a-8cdb-59c30569f539">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0479dd1b-39fd-45c2-b592-548cf1b74f3e"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medico}.getNome()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="10" width="70" height="20" uuid="a30c38b3-12c3-46f9-8fdb-cf2f63527cf1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f6779526-1f3f-482f-84c5-35dfd43bb1c7"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[DATEFORMAT($F{diaMes}.getTime(),"dd/MM/yyyy")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="10" width="50" height="20" uuid="f32bc5f3-ed3b-4a11-b11a-47c537228f1f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9bb6d50b-fb86-4a4a-8c07-5d2911665a7b"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[HOUR($F{hora}.getTime())+":"+MINUTE($F{hora}.getTime() )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="30" width="255" height="30" uuid="a324e064-032e-4c7e-a06c-c7cd5e2c98e2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="af1c08b8-6f71-4885-9b11-6f04864b3049"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{posconsulta}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="70" width="555" height="120" uuid="f266ea71-ce38-4bd5-a2ba-7340ccbc1000"/>
+				<graphicElement>
+					<pen lineColor="#D6D6D6"/>
+				</graphicElement>
+			</rectangle>
+			<subreport>
+				<reportElement stretchType="ContainerHeight" x="10" y="70" width="545" height="60" uuid="99d68677-b17c-4076-b461-97f651de3e97"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource(
+	(java.util.List<br.edu.ifsul.modelo.Exame>) $F{exames}
+)]]></dataSourceExpression>
+				<subreportExpression><![CDATA["subExames.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement stretchType="ContainerHeight" x="10" y="130" width="545" height="60" uuid="4a934518-7153-4cdb-83d3-f0d42e3a164d"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource(
+	(java.util.List<br.edu.ifsul.modelo.Receituario>) $F{receituarios}
+)]]></dataSourceExpression>
+				<subreportExpression><![CDATA["subReceituarios.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="36" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="10" y="10" width="100" height="14" uuid="25799ecf-1236-489e-b8f5-1d9312aa6177"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="450" y="3" width="100" height="30" uuid="2e158c7d-7c33-490b-8ebe-857564532eda"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="3" width="100" height="30" uuid="38fd69c4-37b4-4428-b155-495ab703c4a8"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

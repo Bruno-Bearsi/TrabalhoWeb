@@ -15,6 +15,40 @@
                                  update="formEdicao"
                                  process="@this"
                                  oncomplete="PF('dlg').show();"/>
+                <div align="center">
+                    <p:panelGrid columns="11">
+                        <p:outputLabel value="Ordem: "/>
+                        <p:selectOneMenu value="#{controleMedico.dao.ordemAtual}"
+                                         id="selectOrdem"
+                                         converter="#{controleMedico.dao.converterOrdem}">
+                            <f:selectItems value="#{controleMedico.dao.listaOrdem}"
+                                           var="ord" itemValue="#{ord.atributo}"/>
+                            <p:ajax update="listagem"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="Filtro: "/>
+                        <p:inputText value="#{controleMedico.dao.filtro}">
+                            <p:ajax update="listagem" event="blur"/>
+                        </p:inputText>
+                        <p:commandButton value="Filtrar" update="listagem"/>
+                        <p:outputLabel value="Máximo de Objetos: "/>
+                        <p:inputNumber value="#{controleMedico.dao.maximoObjetos}" size='3'
+                                       thousandSeparator="" decimalSeparator="" decimalPlaces="0">
+                            <p:ajax update="listagem" event="blur"/>
+                        </p:inputNumber>
+                        <p:commandButton actionListener="#{controleMedico.dao.primeiro()}"
+                                         title="Primeiro"
+                                         icon='pi pi-step-backward' update="listagem"/>
+                        <p:commandButton actionListener="#{controleMedico.dao.anterior()}"
+                                         title="Anterior"
+                                         icon='pi pi-chevron-left' update="listagem"/>
+                        <p:commandButton actionListener="#{controleMedico.dao.proximo()}"
+                                         title="Proximo"
+                                         icon='pi pi-chevron-right' update="listagem"/>
+                        <p:commandButton actionListener="#{controleMedico.dao.ultimo()}"
+                                         title="Ultimo"
+                                         icon='pi pi-step-forward' update="listagem"/>
+                    </p:panelGrid>
+                </div>
                 <p:dataTable value="#{controleMedico.dao.listaObjetos}" var="obj"
                              id="listagem">
                     <p:column headerText="ID">

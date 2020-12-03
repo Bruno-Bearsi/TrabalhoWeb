@@ -10,9 +10,11 @@ import br.edu.ifsul.dao.MedicoDAO;
 import br.edu.ifsul.modelo.Especialidade;
 import br.edu.ifsul.modelo.Medico;
 import br.edu.ifsul.util.Util;
+import br.edu.ifsul.util.UtilRelatorios;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import javax.ejb.EJB;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
@@ -37,6 +39,11 @@ public class ControleMedico implements Serializable {
 
     public String listar(){
         return "/privado/medico/listar?faces-redirect=true";
+    }
+    
+    public void imprimeMedicos(){
+        HashMap p = new HashMap();
+        UtilRelatorios.imprimeRelatorio("relatorioMedicos", p, dao.getListaTodos());
     }
     
     public void novo(){

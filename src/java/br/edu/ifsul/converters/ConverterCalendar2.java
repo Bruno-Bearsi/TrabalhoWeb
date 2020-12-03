@@ -22,7 +22,7 @@ import javax.faces.convert.FacesConverter;
 @FacesConverter(value = "converterCalendar2")
 public class ConverterCalendar2 implements Serializable, Converter{
 
-    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    private SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
     
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {

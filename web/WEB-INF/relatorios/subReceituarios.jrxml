@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.15.0.final using JasperReports Library version 6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subExames" pageWidth="550" pageHeight="842" columnWidth="550" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="deef2c4d-fd4f-4198-99a0-4b8c8717b78c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="medicamento" class="java.util.Set">
+		<fieldDescription><![CDATA[medicamento]]></fieldDescription>
+	</field>
+	<field name="posologia" class="java.lang.String">
+		<fieldDescription><![CDATA[posologia]]></fieldDescription>
+	</field>
+	<field name="validade" class="java.util.Calendar">
+		<fieldDescription><![CDATA[validade]]></fieldDescription>
+	</field>
+	<background>
+		<band height="1" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="30" uuid="80245586-2f81-4198-8690-f7e5f8a01c7d"/>
+				<box>
+					<pen lineColor="#EBEBEB"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#EBEBEB"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#EBEBEB"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#EBEBEB"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#EBEBEB"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Receituários]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="61" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="550" height="61" uuid="201e5c23-3445-4f43-b8c2-88951f5bc301"/>
+				<graphicElement>
+					<pen lineColor="#EDEDED"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="113" y="0" width="230" height="21" uuid="41c099ec-d2e5-40bf-aa91-ab39aea43cfa"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medicamento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="1" width="110" height="21" uuid="7d759a2e-768d-4def-8cc7-074e40c6a175"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Medicamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="23" width="110" height="23" uuid="d4fd4849-2b4e-42cc-926a-1b2ee2cfa81e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Posologia]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="433" y="0" width="114" height="23" uuid="674a6ca7-d7dc-4849-96cb-10b8cfc2b8a0"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[DATEFORMAT($F{validade}.getTime(),"dd/MM/yyyy")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="363" y="0" width="70" height="23" uuid="50122f24-0065-44f1-acfa-1d91eb9ac67c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Validade]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="113" y="22" width="434" height="39" uuid="dae12f93-ca40-4070-b587-822dd45ef6ed"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{posologia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
